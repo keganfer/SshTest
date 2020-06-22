@@ -11,15 +11,18 @@
              }
             }
         }
-	    def remote = [:]
+	    
+	    stage('ssh pipeline')
+	    {
+            def remote = [:]
   	    remote.name = 'AWS'
   	    remote.host = 'ec2-3-25-98-11.ap-southeast-2.compute.amazonaws.com'
   	    remote.user = 'ec2-user'
   	    remote.password = ''
   	    remote.allowAnyHosts = true
-	    stage('ssh pipeline')
-	    {
+		    steps{    
 		 sshCommand remote: remote, command: "ls -la"   
-	    }
+		    }
+            }
     }
 }
