@@ -9,7 +9,7 @@
 	    sh 'pwd'	
 	    sh 'cd ~'
 	    sh 'ls'    
-	    sh 'ip -d address' 
+	    sh 'ps
 		    
 	      	      
              }
