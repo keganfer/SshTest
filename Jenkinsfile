@@ -5,7 +5,8 @@
             steps {
             echo 'Deploying....'
             sshagent(credentials: ['ec2-appServer']) {
-            sh 'ls'      
+            sh 'ls'    
+	    sh 'pwd'	    
 	      	      
              }
             }
