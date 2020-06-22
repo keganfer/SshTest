@@ -6,7 +6,10 @@
             echo 'Deploying....'
             sshagent(credentials: ['ec2-appServer']) {
             sh 'ls'    
-	    sh 'pwd'	    
+	    sh 'pwd'	
+	    sh 'cd ~'
+	    sh 'ls'    
+	    sh 'pwd' 
 	      	      
              }
             }
