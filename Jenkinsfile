@@ -8,7 +8,7 @@
         stage('Deploy') {
             steps {
             echo 'Deploying....'
-	    bash '/home/jenkins/appServer.sh'     
+	    sh '/home/jenkins/appServer.sh'     
  	    echo 'second'
 	    sh 'whoami'	    
             
