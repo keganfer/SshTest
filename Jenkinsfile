@@ -10,8 +10,7 @@
             echo 'Deploying....'
 	    sh '''
 	    	#!/bin/bash
-		ssh-agent > script.sh
-		source script.sh
+		ssh-agent bash
 		ssh-add ${KEY_FILE}
 		ssh -A ec2-user@3.25.98.11 -y
             '''	        
