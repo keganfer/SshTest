@@ -4,15 +4,11 @@
         stage('Deploy') {
             steps {
             echo 'Deploying....'
-            sshagent(credentials: ['ec2-appServer']) {
-            sh 'ls'    
-	    sh 'pwd'	
-	    sh 'cd ~'
-	    sh 'ls'    
-	    sh 'ps'
-		    
-	      	      
-             }
+	    withCredentials([sshUserPrivateKey(credentialsId: 'ec2-appServer', keyFileVariable: '/home/jenkins/appServer.pem')]) {    
+            sh 'ls'
+	    sh 'whoami'
+            sh 'pwd'
+            }
             }
         }
 	    
